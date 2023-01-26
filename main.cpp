@@ -3,8 +3,8 @@
 #include <fstream>
 #include <string> 
 
-#include <glm/glm.hpp>
-#include <glm/gtx/euler_angles.hpp>
+#include "glm/glm.hpp"
+#include "glm/gtx/euler_angles.hpp"
 
 //#include "src/scene.hpp"
 //#include "src/rig.hpp"

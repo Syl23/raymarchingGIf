@@ -16,7 +16,7 @@ float map(float val, float mins, float maxs, float mine, float maxe){
 }
 
 void animate(Scene& scene, float t){
-    scene.Power = map(t,0,1,1,4);
+    scene.Power = map(t,0,1,3,4);
 }
 
 float smoothMin(float a, float b, float k) {
