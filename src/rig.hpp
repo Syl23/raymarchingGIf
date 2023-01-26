@@ -71,38 +71,6 @@ void computeSegs(Scene & scene){
 }
 
 
-float DE(glm::vec3 pos) {
-	glm::vec3 z = pos;
-	float dr = 1.0;
-	float r = 0.0;
-
-    int Iterations = 10;
-    float Bailout = 10;
-    float Power = 4;
-
-
-	for (int i = 0; i < Iterations ; i++) {
-		r = length(z);
-		if (r>Bailout) break;
-		
-		// convert to polar coordinates
-		float theta = acos(z.z/r);
-		float phi = glm::atan(z.y,z.x);
-		dr =  pow( r, Power-1.0)*Power*dr + 1.0;
-		
-		// scale and rotate the point
-		float zr = pow( r,Power);
-		theta = theta*Power;
-		phi = phi*Power;
-		
-		// convert back to cartesian coordinates
-		z = zr*glm::vec3(sin(theta)*cos(phi), sin(phi)*sin(theta), cos(theta));
-		z+=pos;
-	}
-	return 0.5*log(r)*r/dr;
-}
-
-
 void animate(Scene& scene, float t){
     float PI = 3.1415926535;
 
@@ -134,7 +102,6 @@ float distanceCube(const glm::vec3& point, const glm::vec3& cubeCenter, const gl
 
 float dist(const Scene& scene, const glm::vec3& point)
 {
-    return DE(point);
     auto dist = 999999.0f;
 
     for(int i = 0 ; i < scene.segs.size() ; i ++){

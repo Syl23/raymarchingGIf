@@ -7,7 +7,9 @@
 #include <glm/gtx/euler_angles.hpp>
 
 //#include "src/scene.hpp"
-#include "src/rig.hpp"
+//#include "src/rig.hpp"
+#include "src/fractal.hpp"
+
 #include "src/animation.hpp"
 #include "src/tools.hpp"
 #include "src/render.hpp"
